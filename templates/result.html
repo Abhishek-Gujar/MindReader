@@ -9,61 +9,69 @@
 <body>
     <header>
         <div class="container">
-            <img src="{{url_for('static',filename='pic.png')}}" class="logo">
-            <h4 class='text'>MindReader</h4>
+            <span>
+                <div>
+                    <img src="{{url_for('static',filename='pic.png')}}">
+                    <h4 class='text'>MindReader</h4>
+                </div>
+            </span>
         </div>
-        <div class="review">
-            <br>
-            <h2 class="A">Your Review</h2>
-            <p class="B"><h3>{{message}}</h3></p>
+        <div class="center">
+            <div class="review">
+                <br>
+                <h2 class="A">Your Review</h2>
+                <p class="B"><h3>{{message}}</h3></p>
+            </div>
         </div>
     </header>
 
-    <div class="result1">
-        <h2>SENTIMENT</h2>
-        {% if predicted_sentiment == 'Positive'%}
-        <img src="{{url_for('static',filename='happy.png')}}" class="senti">
-        <br>
-        <h2 class="P">Positive</h2>
-        {% elif predicted_sentiment == 'Neutral'%}
-        <img src="{{url_for('static',filename='neutral.png')}}" class='senti'>
-        <br>
-        <h2 class="NE">Neutral</h2>
-        {% elif predicted_sentiment == 'Negative'%}
-        <img src="{{url_for('static',filename='angry.png')}}" class="senti">
-        <br>
-        <h2 class="N">Negative</h2>
-        {% endif %}
-    </div>
-
-
-    <div class="result2">
-        <h2>ASPECT</h2>
-        {% if predicted_aspect == 'Electronics'%}
-        <img src="{{url_for('static',filename='electronics.jpg')}}" class="asp">
-        <h2 class="E">Electronics</h2>
-        {% elif predicted_aspect == 'Electronics & Hardware'%}
-        <img src="{{url_for('static',filename='hardware.png')}}" class="asp">
-        <h2 class="EH">Electronics & Hardware</h2>
-        {% elif predicted_aspect == 'Electronics & Media'%}
-        <img src="{{url_for('static',filename='media.png')}}" class="asp">
-        <h2 class="EM">Electronics & Media</h2>
-        {% elif predicted_aspect == 'Health & Beauty'%}
-        <img src="{{url_for('static',filename='beauty.png')}}" class="asp">
-        <h2 class="HB">Health & Beauty</h2>
-        {% elif predicted_aspect == 'Office Supplies & Electronics'%}
-        <img src="{{url_for('static',filename='office.png')}}" class="asp">
-        <h2 class="OE">Office Supplies & Electronics</h2>
-        {% elif predicted_aspect == 'Toys, Games & Electronics'%}
-        <img src="{{url_for('static',filename='games.png')}}" class="asp">
-        <h2 class="TE">Toys, Games & Electronics</h2>
-        {% endif %}
-    </div>
-
-    <div class="result3">
-        <h2>CONFIDENCE</h2>
-        <p class="C">{{confidence}}%</p>
-        <h2 class="level">{{level}}</h2>
+    <div class="AC">
+            <div class="result1">
+                <h2>SENTIMENT</h2>
+                {% if predicted_sentiment == 'Positive'%}
+                <img src="{{url_for('static',filename='happy.png')}}" class="senti">
+                <br>
+                <h2 class="P">Positive</h2>
+                {% elif predicted_sentiment == 'Neutral'%}
+                <img src="{{url_for('static',filename='neutral.png')}}" class='senti'>
+                <br>
+                <h2 class="NE">Neutral</h2>
+                {% elif predicted_sentiment == 'Negative'%}
+                <img src="{{url_for('static',filename='angry.png')}}" class="senti">
+                <br>
+                <h2 class="N">Negative</h2>
+                {% endif %}
+            </div>
+        
+        
+            <div class="result2">
+                <h2>ASPECT</h2>
+                {% if predicted_aspect == 'Electronics'%}
+                <img src="{{url_for('static',filename='electronics.jpg')}}" class="asp">
+                <h2 class="E">Electronics</h2>
+                {% elif predicted_aspect == 'Electronics & Hardware'%}
+                <img src="{{url_for('static',filename='hardware.png')}}" class="asp">
+                <h2 class="EH">Electronics & Hardware</h2>
+                {% elif predicted_aspect == 'Electronics & Media'%}
+                <img src="{{url_for('static',filename='media.png')}}" class="asp">
+                <h2 class="EM">Electronics & Media</h2>
+                {% elif predicted_aspect == 'Health & Beauty'%}
+                <img src="{{url_for('static',filename='beauty.png')}}" class="asp">
+                <h2 class="HB">Health & Beauty</h2>
+                {% elif predicted_aspect == 'Office Supplies & Electronics'%}
+                <img src="{{url_for('static',filename='office.png')}}" class="asp">
+                <h2 class="OE">Office Supplies & Electronics</h2>
+                {% elif predicted_aspect == 'Toys, Games & Electronics'%}
+                <img src="{{url_for('static',filename='games.png')}}" class="asp">
+                <h2 class="TE">Toys, Games & Electronics</h2>
+                {% endif %}
+            </div>
+        
+            <div class="result3">
+                <h2>CONFIDENCE</h2>
+                <p class="C">{{confidence}}%</p>
+                <h2 class="level">{{level}}</h2>
+            </div>
     </div>
 
 

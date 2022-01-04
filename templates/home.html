@@ -11,20 +11,24 @@
 <body>
 
     <div class="container">
-        <img src="{{url_for('static',filename='pic.png')}}">
-        <h4 class='text'>MindReader</h4>
+        <span>
+            <div>
+                <img src="{{url_for('static',filename='pic.png')}}">
+                <h4 class='text'>MindReader</h4>
+            </div>
+        </span>
     </div>
 
-    <div class="ml-container">
-        <form action="{{ url_for('predict')}}" method="POST">
-            <div class="input">
-                <h3 class="para">Your review here</h3>
-                <textarea name="message" rows="15" cols="60"></textarea>
-                <br>
-                <input type="submit" class="input_text" value="Predict">
-            </div>
-        </form>
-    </div>
+        <div class="ml-container">
+            <form action="{{ url_for('predict')}}" method="POST">
+                <div class="input">
+                    <h3 class="para">Your review here</h3>
+                    <textarea name="message" rows="15" cols="60"></textarea>
+                    <br>
+                    <input type="submit" class="input_text" value="Predict">
+                </div>
+            </form>
+        </div>
 
 </body>
 
